@@ -48,7 +48,7 @@ RUN mkdir -p /root/.ssh/ && \
     chmod -R 600 /root/.ssh/ && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-RUN git clone git@github.com:eastkite/Hotdeal-Crawling-Server.git
+RUN git clone git@github.com:eastkite/maskSearch.git
 
 RUN cp firstStart.sh ./Hotdeal-Crawling-Server/
 
