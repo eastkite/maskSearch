@@ -30,6 +30,18 @@ class store(Resource):
         try:
             conn = sqlite3.connect(DB_PATH)
             cur = conn.cursor()
+            
+            userCheckSql = f"select * from user where userSeq = (?)"
+            cur.execute(userCheckSql, (userSeq,))
+            
+            count = cur.fetchone()
+
+            if count is None:
+                errorData =  { 
+                    'code' : '4041',  
+                    'desc' : "HTTP-404 user not found"
+                }     
+                return errorData
 
             requestDeleteRow = f'''DELETE from user_alert WHERE code = (?) and userSeq = (?)'''
             
@@ -78,11 +90,22 @@ class store(Resource):
 
         if (userSeq is None):
             return errorResponse
-
+    
         try:
             conn = sqlite3.connect(DB_PATH)
             conn.row_factory = sqlite3.Row
             cur = conn.cursor()            
+
+            userCheckSql = f"select * from user where userSeq = (?)"
+            cur.execute(userCheckSql, (userSeq,))
+            
+            count = cur.fetchone()
+            if count is None:
+                errorData =  { 
+                    'code' : '4041',  
+                    'desc' : "HTTP-404 user not found"
+                }     
+                return errorData
 
             requestUserHadCode = f'''
             select code, alert from user_alert where userSeq = (?)
@@ -158,6 +181,17 @@ class store(Resource):
         try:
             conn = sqlite3.connect(DB_PATH)
             cur = conn.cursor()
+
+            userCheckSql = f"select * from user where userSeq = (?)"
+            cur.execute(userCheckSql, (userSeq,))
+            
+            count = cur.fetchone()
+            if count is None:
+                errorData =  { 
+                    'code' : '4041',  
+                    'desc' : "HTTP-404 user not found"
+                }     
+                return errorData
 
             # 한사람당 등록할 수 있는 키워드 갯수 10개로 제한
             limit_selectSql = f"select count(code) from user_alert where userSeq = (?)"
