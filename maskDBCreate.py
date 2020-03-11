@@ -67,7 +67,7 @@ def userDBCreate(db_file):
         cursor.execute(f'''CREATE TABLE user_alert (
             "userSeq" INTEGER,
             "code" TEXT,
-            "alert" Integer
+            "alert" Integer,
 			constraint fk_user FOREIGN KEY(userSeq) REFERENCES USER(userSeq),
             PRIMARY KEY ( userSeq, code )
             )

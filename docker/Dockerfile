@@ -48,7 +48,7 @@ RUN mkdir -p /root/.ssh/ && \
 
 RUN git clone git@github.com:eastkite/maskSearch.git
 
-RUN cp firstStart.sh ./Hotdeal-Crawling-Server/
+RUN cp firstStart.sh ./maskSearch/
 
 EXPOSE 8090:8090
 
