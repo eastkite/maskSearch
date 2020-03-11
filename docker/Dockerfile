@@ -2,8 +2,6 @@ FROM ubuntu:18.04
 FROM python:3.8
 FROM ubuntu:18.04
 
-MAINTAINER eastkite eastkite13@gmail.com
-
 RUN apt-get update -y
 RUN apt-get install nano
 
