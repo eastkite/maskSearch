@@ -21,7 +21,7 @@ def refresh_all():
         cur.execute(alert_store_selectSql)
         
         result = cur.fetchall()
-
+        log(len(result))
         for x in result:
             code = x['code']
             lat = x['lat']

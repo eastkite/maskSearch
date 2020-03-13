@@ -56,7 +56,7 @@ def requestStore(storeId, lat, lng):
     else:
         # 일치하는 상점이 없으면
         # 뭐하지?
-        print("일치 안하네요")
+        log("일치 안하네요")
         pass
 
 def pushWithTopic(store, title, body):
@@ -180,7 +180,7 @@ def updateStoreInfo(data):
 def jsonDecoder(jsonLoad, storeId):
     dic = json.loads(jsonLoad)
     # print(dic)
-    print(dic["count"])
+
     # print(dic["stores"])    
     stores = dic["stores"]
     for s in stores:
