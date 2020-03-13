@@ -42,5 +42,6 @@ if __name__ == '__main__':
         refresh_all()
         log("@@@@@@@@@@@@@@@@@@ all complete")
     except Exception as e:
+        log(e)
         log('Goodbye!')
 
