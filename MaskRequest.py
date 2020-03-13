@@ -7,7 +7,7 @@ from pushService import pushSend
 
 def requestStore(storeId, lat, lng):
     url = "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json"
-    param = {'lat' : lat, 'lng': lng, 'm': 100}
+    param = {'lat' : lat, 'lng': lng, 'm': 10}
     
     response = requests.get(url=url, params = param)
     # print(f'{response.json()}'.replace('\'', '\"'))
@@ -216,10 +216,11 @@ def jsonDecoder(jsonLoad, storeId):
 
 
 if __name__ == '__main__':
-    requestStore("31811787", 37.6184485, 126.8305345)
+    # requestStore("31811787", 37.6184485, 126.8305345)
     # jsonString = '{ "count": 2, "stores":[{"addr" : "경기도 고양시 덕양구 무원로 63, 103호 (행신동, 무원마을10단지아파트)","code": "31811787","created_at": "2020/03/11 10:40:00","lat": 37.6184485, "lng": 126.8305345, "name": "메디팜행신약국", "remain_stat": "empty","stock_at": "2020/03/10 10:45:00", "type": "01"}]}'
-
-    # jsonDecoder(jsonString)
+    jsonString = '{"count": 2, "stores": [{"addr": "경기도 안양시 동안구 평촌대로217번길 45 112호 (호계동, G2빌딩)", "code": "41819012", "created_at": None, "lat": 37.3899764, "lng": 126.953531, "name": "원광한약국", "remain_stat": None, "stock_at": None, "type": "01"}, {"addr": "경기도 안양시 동안구 평촌대로223번길 49 301호 (호계동, 아트타워)", "code": "31867979", "created_at": "2020/03/13 13:55:00", "lat": 37.3903589, "lng": 126.9530776, "name": "삼층약국", "remain_stat": "break", "stock_at": "2020/03/13 10:11:00", "type": "01"}]}'
+    
+    jsonDecoder(jsonString, "41819012")
 
 
 
