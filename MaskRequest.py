@@ -46,7 +46,7 @@ def requestStore(storeId, lat, lng):
                 pushWithTopic(data, "[마스크 알림]", f"등록하신 {data['name']} 에 마스크가 줄어들고 있어요.")
                 # 줄어들고있어요
                 pass
-            updateStoreInfo(data)
+            updateStoreInfo(correctStore)
         else:
             # 상점이 없으니 신규 저장
             log("상점 정보가 없어요 새로 저장합니다.")
