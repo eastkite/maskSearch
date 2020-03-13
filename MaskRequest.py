@@ -11,7 +11,8 @@ def requestStore(storeId, lat, lng):
     
     response = requests.get(url=url, params = param)
     # print(f'{response.json()}'.replace('\'', '\"'))
-    log(f"{response.json()}")
+    js = f"{response.json()}".replace('\'', '\"')
+    log(js)
     correctStore = jsonDecoder(f'{response.json()}'.replace('\'', '\"'), storeId)
     if correctStore is not None:
         # 일치하는 상점이 있으면
