@@ -31,6 +31,8 @@ class pushSend(object):
             "priority": "high"
         }
 
+        log(content)
+
         # json 파싱 후 requests 모듈로 FCM 서버에 요청
         response = requests.post(url, data=json.dumps(content), headers=headers)
         print(response.json)
@@ -39,12 +41,18 @@ class pushSend(object):
 if __name__ == '__main__':
     pushService = pushSend()
     data = {
-        'link' : 'http://www.naver.com',
-        'code' : 'link_landing'
+        'name' : '대명약국',
+        'code' : '11889217',
+        'lat' : 37.4814002,
+        'lng' : 126.8837813,
+        'remain_stat' : 'empty',
+        'stock_at' : '2020/03/13 10:25:00',
+        'created_at' : '2020/03/13 15:10:00',
+        'remain_num' : 1
     }
-    utfData = "안녕하세요".encode('utf-8')
-    topic = ["%" + str(hex(c))[2:].upper() for c in utfData]
-    finalTopic = ""
-    for c in topic: 
-        finalTopic = finalTopic + c
-    pushService.send_fcm_notification(f'/topics/{finalTopic}',"hi","test", data)
+    # utfData = "안녕하세요".encode('utf-8')
+    # topic = ["%" + str(hex(c))[2:].upper() for c in utfData]
+    # finalTopic = ""
+    # for c in topic: 
+    #     finalTopic = finalTopic + c
+    pushService.send_fcm_notification(f'/topics/11889217',"[마스크 알림]","등록하신 대명약국 에 마스크가 품절 되었어요.", data)
