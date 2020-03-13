@@ -36,10 +36,10 @@ def requestStore(storeId, lat, lng):
             else:
                 remain_num = 0
 
-            if remain_num == 1 and int(data['remain_num']) != 1:
-                pushWithTopic(correctStore, "[마스크 알림]", f"등록하신 {data['name']} 에 마스크가 품절 되었어요.")
-                # 품절
-                pass
+            # if remain_num == 1 and int(data['remain_num']) != 1:
+            #     pushWithTopic(correctStore, "[마스크 알림]", f"등록하신 {data['name']} 에 마스크가 품절 되었어요.")
+            #     # 품절
+            #     pass
 
             if int(data['remain_num']) < remain_num:
                 # 해당 상점의 마스크 수가 늘어났다
