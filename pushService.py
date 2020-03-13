@@ -45,10 +45,10 @@ if __name__ == '__main__':
         'code' : '11889217',
         'lat' : 37.4814002,
         'lng' : 126.8837813,
-        'remain_stat' : 'empty',
+        'remain_stat' : 'some',
         'stock_at' : '2020/03/13 10:25:00',
         'created_at' : '2020/03/13 15:10:00',
-        'remain_num' : 1
+        'remain_num' : 3
     }
     # utfData = "안녕하세요".encode('utf-8')
     # topic = ["%" + str(hex(c))[2:].upper() for c in utfData]
