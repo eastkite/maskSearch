@@ -44,7 +44,7 @@ if __name__ == '__main__':
     try:
         log("parse run!!!!!!!!!!")
         refresh_all()
-        time.sleep(100)
+        time.sleep(600)
 
         log("@@@@@@@@@@@@@@@@@@ all complete")
     except Exception as e:
