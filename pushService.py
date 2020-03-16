@@ -41,18 +41,18 @@ class pushSend(object):
 if __name__ == '__main__':
     pushService = pushSend()
     data = {
-        'name' : '리더스약국',
+        'name' : '대명약국강남',
         'code' : '11889217',
-        'lat' : 37.4803344,
-        'lng' : 126.8841305,
-        'remain_stat' : 'empty',
-        'stock_at' : '2020/03/13 10:26:00',
-        'created_at' : '2020/03/13 18:05:00',
-        'remain_num' : 0
+        'lat' : 37.490830,
+        'lng' : 126.919962,
+        'remain_stat' : 'some',
+        'stock_at' : '2020/03/13 10:25:00',
+        'created_at' : '2020/03/13 15:10:00',
+        'remain_num' : 3
     }
     # utfData = "안녕하세요".encode('utf-8')
     # topic = ["%" + str(hex(c))[2:].upper() for c in utfData]
     # finalTopic = ""
     # for c in topic: 
     #     finalTopic = finalTopic + c
-    pushService.send_fcm_notification(f'/topics/12801925',"[마스크 알림]","등록하신 리더스약국 에 마스크가 들어왔어요.", data)
+    pushService.send_fcm_notification(f'/topics/11889217',"[마스크 알림]","등록하신 대명약국 에 마스크가 품절 되었어요.", data)
