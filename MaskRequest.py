@@ -75,7 +75,7 @@ def pushWithTopic(store, title, body):
 def hadStoreInfo(code):
     store_selectSql = f"Select code from store where code = {code}"
 
-    DB_PATH = r'./mask.db'
+    DB_PATH = ProjectStaticData.DB_PATH
 
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -101,7 +101,7 @@ def hadStoreInfo(code):
 def selectSpecificStore(code):
     store_selectSql = f"Select * from store where code = {code}"
 
-    DB_PATH = r'./mask.db'
+    DB_PATH = ProjectStaticData.DB_PATH
 
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -136,10 +136,11 @@ def selectSpecificStore(code):
 def insertStoreInfo(data):
     store_insertSql = f"insert into store (code, name, lat, lng, remain_stat, stock_at, created_at, remain_num) values(?,?,?,?,?,?,?,?)"
 
-    DB_PATH = r'./mask.db'
+    DB_PATH = ProjectStaticData.DB_PATH
 
     try:
         log("저장 했니?")
+        log(DB_PATH)
         conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
@@ -161,7 +162,7 @@ def insertStoreInfo(data):
 def updateStoreInfo(data):
     store_updateSql = f"update store set remain_stat = ?, stock_at = ?, created_at = ?, remain_num = ? where code = ?"
 
-    DB_PATH = r'./mask.db'
+    DB_PATH = ProjectStaticData.DB_PATH
 
     try:
         conn = sqlite3.connect(DB_PATH)
