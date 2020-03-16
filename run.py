@@ -41,13 +41,14 @@ def refresh_all():
 
 
 if __name__ == '__main__':
-    try:
-        log("parse run!!!!!!!!!!")
-        refresh_all()
-        time.sleep(600)
+    while(True):
+        try:
+            log("parse run!!!!!!!!!!")
+            refresh_all()
 
-        log("@@@@@@@@@@@@@@@@@@ all complete")
-    except Exception as e:
-        log(e)
-        log('Goodbye!')
+            log("@@@@@@@@@@@@@@@@@@ all complete")
+        except Exception as e:
+            log(e)
+            log('Goodbye!')
+        time.sleep(15)
 
