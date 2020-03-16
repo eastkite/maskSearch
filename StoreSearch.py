@@ -3,9 +3,10 @@ import sqlite3
 from sqlite3 import Error
 from Log import log
 import time
+import ProjectStaticData
 
 def refreshData():
-    DB_PATH = r'./mask.db'
+    DB_PATH = ProjectStaticData.DB_PATH
     try:
         conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row

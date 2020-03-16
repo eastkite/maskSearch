@@ -5,8 +5,9 @@ import sqlite3
 from sqlite3 import Error
 from Log import log
 from MaskRequest import *
+import ProjectStaticData
 
-DB_PATH = r'./mask.db'
+DB_PATH = ProjectStaticData.DB_PATH
 
 class store(Resource):    
     

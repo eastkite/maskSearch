@@ -12,3 +12,5 @@ def as_json(f):
         res = json.dumps(res, ensure_ascii=False).encode('utf8')
         return Response(res, content_type='application/json; charset=utf-8')
     return decorated_function
+
+DB_PATH = r'./mask.db'

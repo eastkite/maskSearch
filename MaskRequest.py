@@ -4,6 +4,7 @@ import sqlite3
 from sqlite3 import Error
 from Log import log
 from pushService import pushSend
+import ProjectStaticData
 
 def requestStore(storeId, lat, lng):
     url = "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json"

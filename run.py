@@ -8,8 +8,10 @@ from sqlite3 import Error
 from MaskRequest import requestStore
 
 import asyncio
+import ProjectStaticData
 
-DB_PATH = r'./mask.db'
+DB_PATH = ProjectStaticData.DB_PATH
+
 
 def refresh_all():
     alert_store_selectSql = f"Select code, lat, lng from alert_store"

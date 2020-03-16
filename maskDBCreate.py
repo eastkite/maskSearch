@@ -1,5 +1,5 @@
 import sqlite3
-
+import ProjectStaticData
 from sqlite3 import Error
 
 def maskStroeDBCreate(db_file):
@@ -95,6 +95,7 @@ def userDBCreate(db_file):
     pass
 
 if __name__ == '__main__':
-    DB_PATH = r'./mask.db'
+    
+    DB_PATH = ProjectStaticData.DB_PATH
     maskStroeDBCreate(DB_PATH)
     userDBCreate(DB_PATH)
