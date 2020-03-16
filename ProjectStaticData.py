@@ -13,4 +13,4 @@ def as_json(f):
         return Response(res, content_type='application/json; charset=utf-8')
     return decorated_function
 
-DB_PATH = r'/Users/baedy/Documents/seorin/git/mask_server'
+DB_PATH = r'/mask.db'
