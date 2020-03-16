@@ -50,5 +50,5 @@ if __name__ == '__main__':
         except Exception as e:
             log(e)
             log('Goodbye!')
-        time.sleep(15)
+        time.sleep(600)
 
