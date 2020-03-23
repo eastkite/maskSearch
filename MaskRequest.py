@@ -26,7 +26,7 @@ def requestStore(storeId, lat, lng):
             remain = correctStore["remain_stat"]
             log(data)
             log(data['remain_num'])
-            if remain == "planty":
+            if remain == "plenty":
                 remain_num = 4
             elif remain == "some":
                 remain_num = 3
